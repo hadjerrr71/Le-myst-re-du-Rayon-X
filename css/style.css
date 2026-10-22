@@ -1,0 +1,250 @@
+
+:root {
+  --pink: #f1a5c6;
+  --pink-dark: #d85c97;
+  --purple: #7656bc;
+  --ink: #30263e;
+  --muted: #81768d;
+  --surface: #ffffff;
+  --background: #fbf7ff;
+  --border: #eee5f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--background);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.topbar {
+  min-height: 70px;
+  padding: 16px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  color: var(--purple);
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
+}
+
+.hero {
+  margin: 32px 0;
+  padding: 38px;
+  border-radius: 28px;
+  background: linear-gradient(120deg, #ffe7f1, #eee8ff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.hero > div:first-child {
+  max-width: 650px;
+}
+
+.eyebrow {
+  color: var(--pink-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  margin: 14px 0;
+}
+
+h1 span {
+  color: var(--purple);
+}
+
+.hero p {
+  line-height: 1.7;
+  color: #64556f;
+}
+
+.pix {
+  font-size: 95px;
+}
+
+.primary, .secondary {
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: transform .15s;
+}
+
+.primary {
+  color: white;
+  background: var(--purple);
+}
+
+.secondary {
+  color: var(--purple);
+  background: #eee7ff;
+}
+
+.primary:hover, .secondary:hover {
+  transform: translateY(-2px);
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0 38px;
+}
+
+.mission-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 5px 18px #38204b08;
+}
+
+.mission-card.locked {
+  opacity: .65;
+}
+
+.level-icon {
+  font-size: 32px;
+}
+
+.mission-card h3 {
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.mission-card p {
+  color: var(--muted);
+  min-height: 42px;
+  line-height: 1.5;
+}
+
+.status {
+  margin: 5px 0 15px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.mission-button {
+  width: 100%;
+  margin-top: auto;
+  padding: 11px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #faf7ff;
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.inventory {
+  padding: 24px;
+  margin-bottom: 50px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.number-slots {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(25px, 1fr));
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.empty-slot {
+  display: grid;
+  place-items: center;
+  min-height: 45px;
+  border-radius: 10px;
+  background: #f4effa;
+  color: #a59ab4;
+  font-weight: 800;
+}
+
+.filled-slot {
+  background: #fce5f0;
+  color: #a83271;
+}
+
+@media (max-width: 760px) {
+  .mission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    padding: 24px;
+  }
+
+  .pix {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

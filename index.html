@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Detective — Le mystère du Rayon X</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <script src="js/levels.js" defer></script>
+  <script src="js/game.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">🔎 Pixel Detective</a>
+    <div class="stats">
+      <span>⭐ XP : <b id="xp-total">0</b></span>
+      <span>🏆 Missions : <b id="clue-total">0</b>/6</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">LABORATOIRE DE PIXELIA</span>
+        <h1>Le mystère du <span>Rayon X</span></h1>
+        <p>
+          Explore les images, invente tes filtres et résous
+          les mystères cachés dans les pixels !
+        </p>
+        <button id="start-button" class="primary">
+          Commencer l'enquête →
+        </button>
+      </div>
+      <div class="pix" aria-label="Robot PIX">🤖</div>
+    </section>
+
+    <section id="missions">
+      <h2>Les missions</h2>
+      <p class="muted">Chaque mission te donne de nouveaux pouvoirs.</p>
+      <div class="mission-grid">
+        <article class="mission-card">
+          <span class="level-icon">🧩</span>
+          <h3>1. Le voleur de pixels</h3>
+          <p>Reconstitue l'image mystère.</p>
+          <span class="status">Disponible</span>
+          <button class="mission-button" data-open="0">Jouer →</button>
+        </article>
+
+        <article class="mission-card">
+          <span class="level-icon">🔍</span>
+          <h3>2. Le Rayon X magique</h3>
+          <p>Découvre le message caché.</p>
+          <span class="status">Verrouillée</span>
+          <button class="mission-button" data-open="1">Jouer →</button>
+        </article>
+
+        <article class="mission-card">
+          <span class="level-icon">🌸</span>
+          <h3>3. La fenêtre secrète</h3>
+          <p>Détecte les contours d'une fleur.</p>
+          <span class="status">Verrouillée</span>
+          <button class="mission-button" data-open="2">Jouer →</button>
+        </article>
+
+        <article class="mission-card">
+          <span class="level-icon">🧪</span>
+          <h3>4. Le laboratoire des filtres</h3>
+          <p>Compare les pouvoirs des filtres.</p>
+          <span class="status">Verrouillée</span>
+          <button class="mission-button" data-open="3">Jouer →</button>
+        </article>
+
+        <article class="mission-card">
+          <span class="level-icon">🕵️</span>
+          <h3>5. L'enquête mystérieuse</h3>
+          <p>Résous une énigme visuelle.</p>
+          <span class="status">Verrouillée</span>
+          <button class="mission-button" data-open="4">Jouer →</button>
+        </article>
+
+        <article class="mission-card">
+          <span class="level-icon">🏙️</span>
+          <h3>6. Sauver Pixelia</h3>
+          <p>Réussis le défi final.</p>
+          <span class="status">Verrouillée</span>
+          <button class="mission-button" data-open="5">Jouer →</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="inventory">
+      <h2>🎒 Ton inventaire de nombres</h2>
+      <p>Récupère des nombres pour construire ton propre filtre 3 × 3.</p>
+      <div id="number-slots" class="number-slots"></div>
+      <p id="inventory-count" class="muted">0 nombre</p>
+    </section>
+  </main>
+
+  <div id="mission-window" class="modal" hidden>
+    <section class="modal-panel" role="dialog"
+      aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-top">
+        <span id="modal-badge" class="eyebrow">MISSION 01</span>
+        <button id="close-mission" class="close-button"
+          aria-label="Fermer">✕</button>
+      </div>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <div id="game-area"></div>
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <div class="modal-actions">
+        <span id="modal-xp">+10 XP</span>
+        <div>
+          <button id="hint-button" class="secondary">Indice 💡</button>
+          <button id="check-button" class="primary">Vérifier ✓</button>
+          <button id="continue-button" class="primary" hidden>
+            Continuer →
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
